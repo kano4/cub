@@ -18,7 +18,8 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    Cub.company(7203)
+    => "トヨタ自動車"
 
 ## Contributing
 

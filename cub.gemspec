@@ -14,4 +14,6 @@ Gem::Specification.new do |gem|
   gem.name          = "cub"
   gem.require_paths = ["lib"]
   gem.version       = Cub::VERSION
+
+  gem.add_development_dependency "rspec"
 end
