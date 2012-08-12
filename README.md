@@ -1,6 +1,6 @@
 # Cub
 
-TODO: Write a gem description
+Fetch stock information
 
 ## Installation
 
