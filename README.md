@@ -21,6 +21,9 @@ Or install it yourself as:
     Cub.company(7203)
     => "トヨタ自動車"
 
+    Cub.price(7203)
+    => 3275
+
 ## Contributing
 
 1. Fork it
