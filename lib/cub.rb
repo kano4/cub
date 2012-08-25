@@ -26,6 +26,14 @@ module Cub
     end
   end
 
+  def self.per(code)
+    if valid_code?(code)
+       fetch_per(code)
+    else
+      raise CompanyException, "無効な証券コード"
+    end
+  end
+
   private
   def self.valid_code?(code)
     /^\d{4}$/ =~ code.to_s
@@ -46,6 +54,13 @@ module Cub
     user_agent = 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0)'
     doc = Nokogiri::HTML(open(url, 'User-Agent' => user_agent).read)
     doc.css('td[class=stoksPrice]').text.gsub(/(\d{0,3}),(\d{3})/, '\1\2').to_i
+  end
+
+  def self.fetch_per(code)
+    url = "http://stocks.finance.yahoo.co.jp/stocks/detail/?code=#{code}"
+    user_agent = 'Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0)'
+    doc = Nokogiri::HTML(open(url, 'User-Agent' => user_agent).read)
+    doc.css('div[class=chartFinance] dl[class=tseDtl] dd[class="ymuiEditLink mar0"] strong').children[2].text.gsub(/\((連|単)\) /, "").to_f
   end
 
 end

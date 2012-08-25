@@ -11,6 +11,16 @@ describe Cub do
     it '株価を表示' do
       Cub.price(7203).should be_within(1000).of(3000)
     end
+
+    describe 'PERを表示' do
+      it '連結の場合' do
+        Cub.per(7203).should be > 0
+      end
+
+      it '単独の場合' do
+        Cub.per(3793).should be > 0
+      end
+    end
   end
 
   context '証券コードに対応する会社が存在しない場合' do

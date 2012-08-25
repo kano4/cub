@@ -24,6 +24,9 @@ Or install it yourself as:
     Cub.price(7203)
     => 3275
 
+    Cub.price(7203)
+    => 35.86
+
 ## Contributing
 
 1. Fork it
