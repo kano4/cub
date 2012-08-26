@@ -24,8 +24,11 @@ Or install it yourself as:
     Cub.price(7203)
     => 3275
 
-    Cub.price(7203)
+    Cub.per(7203)
     => 35.86
+
+    Cub.pbr(7203)
+    => 0.97
 
 ## Contributing
 
